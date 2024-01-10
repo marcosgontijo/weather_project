@@ -20,17 +20,17 @@ class Database():
         client = MongoClient(mongo_uri)
 
         database_name = "master"
-        # Selecionar o banco de dados desejado (substitua 'nome_do_banco' pelo nome do seu banco de dados)
+        # Selecionar o banco de dados desejado
         db = client[database_name]
 
         collection_name = "weather"
-        # Selecionar a coleção desejada (substitua 'nome_da_colecao' pelo nome da sua coleção)
+        # Selecionar a coleção desejada
         collection = db[collection_name]
 
         # Inserir dados na coleção
         resultado = collection.insert_one(dados)
 
-        # Retornar o ID do documento recém-inserido
+        # Retornar o ID do documento recem-inserido
         return resultado.inserted_id
 
 
