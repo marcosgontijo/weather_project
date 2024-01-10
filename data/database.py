@@ -30,7 +30,7 @@ class Database():
         # Inserir dados na coleção
         resultado = collection.insert_one(dados)
 
-        # Retornar o ID do documento recem-inserido
+        # Retornar o ID do documento recente
         return resultado.inserted_id
 
 
