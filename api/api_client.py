@@ -15,6 +15,6 @@ def get_weather_data(cidade):
     descricao = requisicao_dic['weather'][0]['description']
 
     temperatura_fahrenheit = requisicao_dic['main']['temp']  # formula °C = (°F - 32) × 5/9
-    temperatura_celsius = (temperatura_fahrenheit - 32) * 5 / 9
+    temperatura_celsius = (temperatura_fahrenheit - 273.15)
 
     return descricao, temperatura_celsius

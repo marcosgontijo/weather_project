@@ -1,19 +1,42 @@
-import pymongo
+from _ast import mod
 
-class Database:
-    def conn_database(self, dados):
+import pymongo
+from pymongo import MongoClient
+
+
+class Database():
+    # def innit_bd(self):
+    #     mongo_uri = "mongodb+srv://admin:admin@cluster0.tkho3ux.mongodb.net/"
+    #     client = pymongo.MongoClient(mongo_uri)
+    #     database_name = "master"
+    #     db = client[database_name]
+    #     #collection_name = "weather"
+    #     collection = "weather"
+
+        #resultado = collection.insert_one(dados)
+
+    def insert_data_mongo(self, dados):
         mongo_uri = "mongodb+srv://admin:admin@cluster0.tkho3ux.mongodb.net/"
-        client = pymongo.MongoClient(mongo_uri)
+        client = MongoClient(mongo_uri)
 
         database_name = "master"
-        self.db = client[database_name]
+        # Selecionar o banco de dados desejado
+        db = client[database_name]
 
         collection_name = "weather"
-        collection = self.db[collection_name]
+        # Selecionar a coleção desejada
+        collection = db[collection_name]
 
-        print("Banco de dados conectado com sucesso!")
-
+        # Inserir dados na coleção
         resultado = collection.insert_one(dados)
+
+        # Retornar o ID do documento recém-inserido
+        return resultado.inserted_id
+
+
+
+
+
 
 
 
