@@ -20,11 +20,11 @@ class Database():
         client = MongoClient(mongo_uri)
 
         database_name = "master"
-        # Selecionar o banco de dados desejado
+        # Selecionar o banco de dados desejado (substitua 'nome_do_banco' pelo nome do seu banco de dados)
         db = client[database_name]
 
         collection_name = "weather"
-        # Selecionar a coleção desejada
+        # Selecionar a coleção desejada (substitua 'nome_da_colecao' pelo nome da sua coleção)
         collection = db[collection_name]
 
         # Inserir dados na coleção
